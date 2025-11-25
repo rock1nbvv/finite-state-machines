@@ -2,7 +2,7 @@ package com.rock1nbvv.dfa;
 
 public class DfaDemo {
     public static void main(String[] args) {
-        int modulus = 10;
+        int modulus = 5;
         StateMachine<Integer, Integer> machine = new DivisibleByXDfa(modulus);
 
         Integer finalState = DivisibleByXDfaRunner.run(machine, "101101");

@@ -9,7 +9,7 @@ public class DivisibleByXDfa implements StateMachine<Integer, Integer> {
 
     @Override
     public Integer transition(Integer state, Integer bit) {
-        return (state * 2 + bit) % modulus;
+        return ((state << 1) + bit) % modulus;
     }
 
     @Override

@@ -1,10 +1,10 @@
 # Finite state machines
 
-_Finite Automaton_ or _Finite State Machine_ is a mathematical model of computation that processes an input of string
+_**Finite Automaton**_ or _**Finite State Machine**_ is a mathematical model of computation that processes an input of string
 symbol by symbol and moves through a finite number of states according to predefined transition rules
 
 # Deterministic finite automaton
-_Deterministic Automaton_ is a type on finite state machine that has exactly one state for every (state, input) pair.
+_**Deterministic Automaton**_ is a type on finite state machine that has exactly one state for every state, input pair.
 
 Suppose we have a binary string `n = "101101"` and a number `k = 5`.
 
@@ -51,4 +51,4 @@ Using our transition table we can traverse throug our string
 | 0     | 2          |
 | 1     | 0          |
 
-Final state is `0` it means that number is divisible by 5.
+Final state is 0 it means that number is divisible by 5.

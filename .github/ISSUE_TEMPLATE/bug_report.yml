@@ -1,44 +1,104 @@
 name: Bug Report
-description: Report a bug
-labels: ["bug"]
+description: Report a bug to help us improve the project.
+# The 'title' field provides a pre-filled prefix for the issue title [3-5]
+title: "[Bug]: "
+# Labels and assignees defined here are applied automatically upon submission [3, 4]
+labels: ["bug"] 
+assignees: []
+
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Please fill out the sections below to help everyone identify and fix the bug
   - type: textarea
-    id: description
+    id: steps-to-reproduce
     attributes:
-      label: Describe your issue
-      placeholder: When I click here this happens
-    validations:
-      required: true
-  - type: textarea
-    id: steps
-    attributes:
-      label: Steps to reproduce
+      label: Steps to Reproduce
+      description: Provide a clear list of steps to trigger the bug [6, 7].
       placeholder: |
-        1. Go to page X
-        2. Click here
-        3. Click there
+        1. Go to...
+        2. Click on...
+    validations:
+      required: true # Mandatory field [7]
+
+  - type: textarea
+    id: actual-result
+    attributes:
+      label: Actual Result
+      description: What happened after following the steps above? [6]
     validations:
       required: true
+
   - type: textarea
-    id: expected
+    id: expected-result
     attributes:
-      label: What was the expected result?
-      placeholder: I expected this to happen
-  - type: textarea
-    id: screenshots
-    attributes:
-      label: Put here any screenshots or videos (optional)
+      label: Expected Result
+      description: What did you expect to happen? [6]
+    validations:
+      required: true
+
   - type: dropdown
-    id: assign
+    id: bug-type
     attributes:
-      label: "Would you like to work on this issue?"
+      label: Type
       options:
-        - "Yes"
-  - type: markdown
+        - Security
+        - UI/UX
+        - Functional
+        - Performance
+    validations:
+      required: true # Mandatory single-select [8, 9]
+
+  - type: dropdown
+    id: department
     attributes:
-      value: |
-        Thanks for reporting this issue! We will get back to you as soon as possible.
+      label: Department
+      options:
+        - Frontend
+        - Backend
+        - Mobile
+        - DevOps
+    validations:
+      required: true
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module
+      options:
+        - Authentication
+        - Database
+        - User Interface
+        - API
+    validations:
+      required: true
+
+  - type: dropdown
+    id: assignee-selection
+    attributes:
+      label: Assignee (Optional)
+      description: You can suggest an assignee here.
+      multiple: false # Single select [8]
+      options:
+        - Lead-Dev
+        - QA-Manager
+        - Project-Owner
+
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: Milestone (Optional)
+      options:
+        - v1.0.0
+        - v1.1.0
+        - Backlog
+
+  - type: dropdown
+    id: labels-select
+    attributes:
+      label: Label
+      description: Select applicable labels.
+      multiple: true # Multiselect field [8, 10]
+      options:
+        - high-priority
+        - documentation
+        - help-wanted
+    validations:
+      required: true
